@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+
+<header>
+    <h1>Elysia</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a current student at Stella Maris Gading serpong, Grade 11 St. Ernest.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="download (1).jpg" alt="Project 1" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="download (2).jpg" alt="Project 2" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="download.jpg" alt="Project 3" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex - 1].style.display = "block";  
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function plusSlides(n) {
+        slideIndex += n;
+        if (slideIndex > document.getElementsByClassName("mySlides").length) {
+            slideIndex = 1;
+        }
+        if (slideIndex < 1) {
+            slideIndex = document.getElementsByClassName("mySlides").length;
+        }
+        showCurrentSlide(slideIndex);
+    }
+
+    function showCurrentSlide(n) {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[n - 1].style.display = "block";  
+    }
+</script>
+
+</body>
+</html>
